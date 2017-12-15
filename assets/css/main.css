@@ -1,0 +1,85 @@
+body{
+  font-size: 1em;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.75;
+}
+
+/* HEADINGS */
+h1, h2, h3, h4, h5, h6{ font-family: 'Lakki Reddy', cursive; color: #148abb;}
+
+/* LOADER */
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  display: none;
+  margin: 10px auto;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/***
+HOMEPAGE
+***/
+
+#header{ width: 100%; position: relative;}
+#header .logo-text{ font-size: 1.5em; font-family: 'Lakki Reddy', cursive; text-shadow: 0 3px 4px rgba(170,170,170,0.1);}
+#header .logo-text:hover{ background: none;}
+#header a{ color: #fff; text-shadow: 0 3px 4px rgba(170,170,170,0.5); transition: all ease-in 0.3s; -webkit-transition: all ease-in 0.3s; -moz-transition: all ease-in 0.3s;}
+#header a:hover{ color: #b7b7b7; text-shadow: none; background: #000;}
+#header a:hover svg{ transform: scale(0.8); position: relative; transition: all ease-in 0.2s; -webkit-transition: all ease-in 0.2s; -moz-transition: all ease-in 0.2s;}
+#header a:hover > svg{ transform: scale(1.5);}
+.uk-offcanvas-content,.main-menu-wrapper{ background: #222;}
+.uk-navbar-container{ background: transparent!important;}
+.main-menu{ max-width: 1200px; margin: 0 auto;}
+
+
+/* SOCCER-BANNER */
+.soccer-banner{ width: 100%; min-height: 70vh; background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)), url('../images/emirates-stadium.jpg') center center;}
+
+.welcome-text{ color: #fff; font-size: 2.25em; text-shadow: 1px 3px 3px rgba(0,0,0,0.5); -webkit-animation: scale-color 4s linear 2;
+animation: scale-color 4  s linear 2;
+}
+
+@-webkit-keyframes scale-color {
+0% { -webkit-transform: scale(0.1); color: #222; }
+50% { -webkit-transform: scale(1); color: #666; }
+100% { -webkit-transform: scale(0); color: #fff; }
+}
+
+@keyframes scale-color {
+0% { transform: scale(0.1); color: #222; }
+50% { transform: scale(1); color: #666; }
+100% { transform: scale(0); color: #fff; }
+}
+
+.team-list{ list-style-type: none;}
+.team-list li{ float: left; display: block; margin: 0 2.5em 1.5em 0; text-align: center;}
+.team-list li img{ width: 80px; height: 80px; transition: all ease-in 0.15s;}
+.team-list li img:hover{ transform: translateY(5px); cursor: pointer; box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.1); padding: 0.5em;}
+
+/* FOOTER */
+#footer{ background: #121212; padding: 1em 0; color: #fff!important;}
+#footer p{ margin-bottom: 0;}
+
+/* MEDIA-QUERIES*/
+@media screen and (max-width: 767px){
+  .uk-heading-primary{ font-size: 1.625rem;}
+}
+
+@media screen and (min-width: 767px){
+
+}

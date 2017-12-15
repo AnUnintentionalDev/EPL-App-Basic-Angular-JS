@@ -1,0 +1,109 @@
+<!-- FILTER-FORM-->
+<form class="uk-grid-small uk-padding-small" name="all-matches-filter" uk-grid>
+  <!--<fieldset class="uk-fieldset">-->
+    <legend class="uk-legend">Filter your Search</legend>
+    <div class="uk-width-1-2@s uk-margin-small-bottom">
+      <label class="uk-form-label" for="form-horizontal-text">Filter by year</label>
+      <div class="uk-form-controls">
+        <label class="uk-margin-right">
+          <input class="uk-radio" type="radio" name="year2015" checked> 2015
+        </label>
+        <label>
+          <input class="uk-radio" type="radio" name="year2015"> 2016
+        </label>
+      </div>
+    </div>
+    <div class="uk-width-1-2@s uk-margin-small-bottom">
+      <label class="uk-form-label" for="form-horizontal-text">Filter by Team Name</label>
+      <div class="uk-form-controls">
+        <input class="uk-input" type="text" placeholder="Enter name of the team">
+      </div>
+    </div>
+    <div class="uk-width-1-2@s uk-margin-small-bottom">
+      <label class="uk-form-label" for="form-horizontal-text">Filter by Score</label>
+      <div class="uk-form-controls">
+        <input class="uk-input" type="text" placeholder="Enter the number of goals">
+      </div>
+    </div>
+    <div class="uk-width-1-2@s uk-margin-small-bottom">
+      <label class="uk-form-label" for="form-horizontal-text">Filter by Team Code</label>
+      <div class="uk-form-controls">
+        <input class="uk-input" type="text" placeholder="Enter the code of the team">
+      </div>
+    </div>
+  <!--</fieldset>-->
+</form>
+<!-- END-OF-FILTER-FORM-->
+<!-- FILTERED-DATA-->
+<div class="filtered-data-2015" ng-init="showAllCtrl.loadAllMatchesHeldIn2015()">
+  <h3 class="uk-heading-primary">{{showAllCtrl.dataName2015}}</h3>
+
+  <div class="uk-overflow-auto">
+    <table class="uk-table uk-table-striped">
+      <thead>
+        <tr>
+          <th>Rounds</th>
+          <th>Date</th>
+          <th>Team One</th>
+          <th>Team Two</th>
+          <th>Score (1<sup>st</sup>)</th>
+          <th>Score (2<sup>nd</sup></th>
+          <th>Final Score</th>
+        </tr>
+      </thead>
+      <!-- ITERATING-THROUGH-ALL-CONTENT-OF-2015-->
+      <tbody ng-repeat="content in showAllCtrl.data_rounds2015">
+        <!-- ITERATING-THROUGH-MATCHES-->
+        <tr ng-repeat="match in content.showAllCtrl">
+          <td>{{content.name}}</td>
+          <td>{{showAllCtrl.date}}</td>
+          <td>{{showAllCtrl.team1.name}}</td>
+          <td>{{showAllCtrl.team2.name}}</td>
+          <td>{{showAllCtrl.score1}}</td>
+          <td>{{showAllCtrl.score2}}</td>
+          <td>{{showAllCtrl.score1}} - {{showAllCtrl.score2}}</td>
+        </tr>
+        <!-- END-OF-ITERATING-THROUGH-MATCHES-->
+      </tbody>
+      <!-- END-OF-ITERATING-THROUGH-ALL-CONTENT-OF-2015-->
+
+    </table>
+  </div>
+
+</div>
+<!-- END-OF-FILTERED-DATA-2015-->
+<!-- FILTERED-DATA-2016-->
+<div class="filtered-data-2016" ng-init="showAllCtrl.loadAllMatchesHeldIn2016()">
+  <h3 class="uk-heading-primary">{{showAllCtrl.dataName2016}}</h3>
+
+  <div class="uk-overflow-auto">
+    <table class="uk-table uk-table-striped">
+      <thead>
+        <tr>
+          <th>Rounds</th>
+          <th>Date</th>
+          <th>Team One</th>
+          <th>Team Two</th>
+          <th>Score (1<sup>st</sup>)</th>
+          <th>Score (2<sup>nd</sup></th>
+          <th>Final Score</th>
+        </tr>
+      </thead>
+      <tbody ng-repeat="content in showAllCtrl.data_rounds2016">
+
+        <tr ng-repeat="match in content.showAllCtrl">
+          <td>{{content.name}}</td>
+          <td>{{showAllCtrl.date}}</td>
+          <td>{{showAllCtrl.team1.name}}</td>
+          <td>{{showAllCtrl.team2.name}}</td>
+          <td>{{showAllCtrl.score1}}</td>
+          <td>{{showAllCtrl.score2}}</td>
+          <td>{{showAllCtrl.score1}} - {{showAllCtrl.score2}}</td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+
+</div>
+<!-- END-OF-FILTERED-DATA-2016-->

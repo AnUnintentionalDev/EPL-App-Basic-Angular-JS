@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en" ng-app="PremierLeague">
+  <head>
+    <title>Barclays Premier League App | edWisor</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CUSTOM-FONTS-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lakki+Reddy|Montserrat:400,500" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/uikit.css">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+  <body>
+    <!-- HEADER-->
+    <header id="header">
+      <!-- MOBILE-MENU-->
+      <div class="uk-offcanvas-content uk-hidden@m" uk-sticky="sel-target: .soccer-banner; cls-active: uk-navbar-sticky">
+        <!-- MOBILE-MENU-->
+        <nav class="uk-navbar-container uk-padding-small" uk-navbar>
+            <div class="uk-navbar-left">
+                <a href="#" class="logo-text"><strong>Basic Angular JS Assignment - Level 4</strong></a>
+            </div>
+            <div class="uk-navbar-right">
+                <button class="uk-navbar-toggle" uk-navbar-toggle-icon href="" uk-toggle="target: #offcanvas-nav"></button>
+            </div>
+            <div id="offcanvas-nav" uk-offcanvas="flip: true">
+               <div class="uk-offcanvas-bar">
+                   <button class="uk-offcanvas-close" type="button" uk-close></button>
+                   <ul class="uk-nav uk-nav-default uk-margin-top">
+                        <li class="uk-nav-header uk-active">
+                          <a href="#/">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                            id="Capa_1" x="0px" y="0px" width="26px" height="26px" class="uk-margin-small-right" viewBox="0 0 952.1 952.1" style="enable-background:new 0 0 952.1 952.1;" xml:space="preserve">
+                            <g>
+                            	<g>
+                            		<path d="M812.55,139.4c-43.7-43.7-94.6-78-151.3-102C602.55,12.6,540.25,0,475.95,0c-64.2,0.1-126.5,12.6-185.2,37.5    c-56.7,24-107.6,58.3-151.3,102c-43.7,43.7-78,94.6-102,151.3c-24.8,58.7-37.4,121-37.4,185.3c0,64.201,12.6,126.6,37.4,185.301    c24,56.699,58.3,107.6,102,151.299c43.7,43.701,94.6,78,151.3,102c58.7,24.801,121,37.4,185.3,37.4    c64.2,0,126.601-12.6,185.3-37.4c56.7-24,107.601-58.299,151.301-102c43.699-43.699,78-94.6,102-151.299    c24.8-58.701,37.399-121,37.399-185.301c0-64.2-12.6-126.6-37.399-185.3C890.55,234,856.25,183.2,812.55,139.4z M212.55,107.5    c4.3-3.3,8.5-6.8,12.9-9.9c23.1-16.2,48.7-29.3,74.7-40.2C355.55,34.2,415.75,22,475.95,22c40.1,0,81.2,5.4,119.899,16    c-15.3,6.2-34,18-65.399,44.8c-26.101-2.8-52.5-2.9-79-0.4c-34.601,3.3-69.4,11-103.4,23c-30.7,10.8-55,23.1-71.4,32.5    c-25.1-9-57.5-19.6-73.5-24.8C205.65,113.9,210.85,108.8,212.55,107.5z M646.15,226.5l-81.4,222.2l-195.3,37.5L208.05,319.5    c10.9-75.6,62.7-142.6,62.7-142.6c0.3-0.2,34.1-24.6,88.3-43.5c31.601-11.1,63.8-18.2,95.9-21.2c26.2-2.4,52.3-2,78.1,1.1    L646.15,226.5z M39.35,460.2c-5,32.3-6.1,65.8-3.5,99.5c-3.9-7.799-7-14.398-9.3-19.699c-3-20.9-4.5-42.301-4.5-64.1    c0-67,14.5-130.7,40.6-188c-2.9,30-1.5,61.1,0.6,84.7C52.05,400.7,44.05,430,39.35,460.2z M78.85,633.301    c-4.6-16.9-10-41.5-12.7-71c-3-33.301-2.1-66.4,2.9-98.101c3.8-24.3,9.9-47.899,18.3-70.6c32.9-27.8,76.5-44.1,100.6-51.6    L346.35,505.6L329.75,684.9L174.95,736.6C135.55,707.6,103.35,669.199,78.85,633.301z M549.25,892.9    c-34.5,22.6-121.7,28-157.1,29.299c-39-7.299-76.9-19.799-112.601-37c-31.2-15-60.8-33.6-87.8-55.398c0.5-0.9-4.2-48.602-4-66    l156.4-52.201l180.5,78.1l24.899,102.9C549.35,892.801,549.25,892.9,549.25,892.9z M849.15,734.6    C822.25,773.4,790.05,809.5,751.35,836.9c-36.3,25.6-84.899,34.4-128.1,41.5c-3.3,0.5-44.6,7.299-44.9,5.9l-24.899-103L680.55,649    l168.3-15.5c2.601,26.801,6,65.9,8,89.801C854.25,727.1,851.75,730.9,849.15,734.6z M851.75,600c-0.6,1-1.2,2.1-1.8,3.301    L682.35,618.699L592.15,460.9l81.6-222.7l115.2,7.3c24.5,20.5,46.2,43.3,64.6,67.9c23,30.9,40.9,64.8,53.101,100.7    C893.85,525.301,864.35,580.699,851.75,600z M911.85,349.8c-9.899-19.1-21.5-37.5-34.6-55c-20.7-27.7-45.3-53.2-73.2-75.9    c-5.1-25.3-19.1-65.1-56.7-106.9c0.7,0.5,1.4,1.1,2.101,1.6c2.3,1.7,4.5,3.5,6.8,5.2c25.9,20.4,49.5,43.5,70.4,68.9    c38.8,47.3,68.1,102.2,85.3,161.1C911.85,349.2,911.85,349.5,911.85,349.8z" fill="#FFFFFF"/>
+                            	</g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            </svg>
+                            Home</a>
+                        </li>
+                        <li class="uk-nav-header">
+                          <a href="#/all-matches">
+                            <!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
+                            x="0px" y="0px" viewBox="0 0 490.547 490.547" style="enable-background:new 0 0 490.547 490.547;"
+                            xml:space="preserve" width="26px" height="26px" class="uk-margin-small-right">
+                            <g id="XMLID_477_">
+                            	<path id="XMLID_478_" d="M251.089,141.867c13.602-13.25,13.856-35.018,0.624-48.568c-13.25-13.587-34.969-13.889-48.537-0.639   c-13.586,13.246-13.889,34.968-0.624,48.535C215.753,154.795,237.521,155.066,251.089,141.867z" fill="#FFFFFF"/>
+                            	<path id="XMLID_479_" d="M210,371.783c-13.568,13.217-13.857,34.953-0.623,48.523c13.199,13.599,34.969,13.887,48.568,0.668   c13.57-13.248,13.841-35.016,0.592-48.568C245.288,358.806,223.586,358.535,210,371.783z" fill="#FFFFFF"/>
+                            	<path id="XMLID_480_" d="M266.576,247.029l-49.656-14.225l-7.496-24.293c9.974-11.491,9.798-28.832-1.023-39.939l-8.808-9.029   c-3.947-4.074-10.69-7.495-13.918-8.311l-72.766-18.667c-6.633-1.726-13.696,0.384-18.332,5.448l-43.79,47.725   c-6.937,7.575-6.442,19.354,1.118,26.289c3.564,3.276,8.071,4.906,12.577,4.906c5.034,0,10.037-2.045,13.714-6.025l36.246-39.539   l24.26,6.219L86.89,228.074c-7.957,6.809-15.149,17.611-10.58,28.48l20.474,48.714L12.065,349.2   c-10.949,5.674-15.231,19.162-9.558,30.095c5.657,10.868,19.065,15.215,30.093,9.541l103.021-53.412   c2.955-1.533,5.259-3.725,7.191-6.201l11.252,12.451l-16.462,60.891c-3.212,11.876,3.834,24.149,15.727,27.361   c12.02,3.213,24.18-3.932,27.361-15.727l19.641-72.639c1.967-7.318,0.113-15.135-4.986-20.76l-47.178-52.262l31.404-30.605   l4.779,15.452c1.854,6.012,6.6,10.679,12.642,12.404l59.34,16.988c9.909,2.846,20.185-2.924,22.999-12.752   C282.159,260.148,276.453,249.857,266.576,247.029z" fill="#FFFFFF"/>
+                            	<path id="XMLID_481_" d="M489.461,228.503l-21.751-61.018c-2.304-6.457-7.976-11.125-14.753-12.147l-74.301-11.171   c-3.389-0.496-10.836,0.049-16.045,2.238l-11.65,4.891c-14.272,6.023-21.24,21.927-16.492,36.406l-16.352,19.435l-51.287-6.217   c-10.436-1.23-19.481,6.026-20.711,16.221c-1.23,10.212,6.025,19.468,16.222,20.698l61.29,7.432c6.105,0.766,12.34-1.6,16.494-6.49   l10.371-12.355l18.684,44.382l-30.844,22.04c-2.975,2.142-5.387,4.97-7.017,8.232l-48.362,97.377   c-5.482,11.027-0.976,24.437,10.068,29.918c10.996,5.435,24.405,1.039,29.936-10.067l37.652-75.853l66.518,80.182   c7.832,9.414,21.88,10.805,31.436,2.928c9.493-7.881,10.804-21.946,2.926-31.438l-60.94-73.454l37.831-36.917   c8.245-8.04,6.137-19.691,1.66-29.617l-28.367-67.377l24.74,3.706l18.012,50.519c3.468,9.75,14.191,14.735,23.766,11.268   C487.862,248.818,492.912,238.174,489.461,228.503z" fill="#FFFFFF"/>
+                            	<path id="XMLID_482_" d="M367.022,125.82c17.486-7.334,25.668-27.456,18.316-44.955c-7.352-17.453-27.475-25.686-44.94-18.316   c-17.485,7.35-25.716,27.488-18.364,44.988C329.418,124.988,349.553,133.22,367.022,125.82z" fill="#FFFFFF"/>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            </svg>
+                            All Matches</a>
+                        </li>
+                        <li class="uk-nav-header">
+                          <a href="#/">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                            id="Capa_1" x="0px" y="0px" width="26px" height="26px" viewBox="0 0 304.769 304.769"
+                            style="enable-background:new 0 0 304.769 304.769;" xml:space="preserve" class="uk-margin-small-right">
+                              <g>
+                              	<g>
+                              		<path d="M234.859,134.858c-16.398,0-31.463,5.719-43.385,15.21c-0.032-2.216-0.657-4.455-1.976-6.432l-25.567-38.233    l-15.238,22.792l-6.632,9.921l-18.598-27.806L87.814,56.998l-12.72,19.017l-3.027,4.535l-8.502-12.708L47.101,43.206V30.098    H23.552v31.4H0V85.05h23.552v23.552H0v23.549h23.552v23.552H0v23.551h23.552v23.552H0v23.552h23.552v31.398h23.549V85.575    l24.966,37.339l15.747-23.552l54.247,81.118l21.871-32.713l5.987,8.949c2.268,3.402,6.007,5.217,9.81,5.217    c-9.229,11.847-14.779,26.689-14.779,42.828c0,38.543,31.362,69.909,69.91,69.909c38.547,0,69.909-31.366,69.909-69.909    C304.769,166.214,273.406,134.858,234.859,134.858z M277.277,223.412c-2.376-1.166-5.013-1.892-7.851-1.892    c-9.842,0-17.833,7.979-17.833,17.829c0,2.829,0.722,5.466,1.896,7.843c-5.71,2.517-11.998,3.935-18.638,3.935    c-6.641,0-12.925-1.418-18.643-3.935c1.162-2.377,1.891-5.014,1.891-7.843c0-9.851-7.994-17.829-17.824-17.829    c-2.838,0-5.475,0.726-7.851,1.892c-2.513-5.719-3.924-12.006-3.924-18.643c0-6.641,1.411-12.928,3.924-18.646    c2.376,1.166,5.013,1.896,7.851,1.896c9.846,0,17.824-7.983,17.824-17.833c0-2.829-0.729-5.467-1.891-7.843    c5.718-2.517,12.002-3.936,18.643-3.936c6.64,0,12.928,1.419,18.638,3.936c-1.174,2.376-1.896,5.014-1.896,7.843    c0,9.85,7.991,17.833,17.833,17.833c2.838,0,5.475-0.729,7.851-1.896c2.513,5.702,3.939,12.006,3.939,18.646    C281.217,211.406,279.807,217.709,277.277,223.412z" style="fill: rgb(255, 255, 255);"></path>
+                              		<path d="M234.859,186.937c9.85,0,17.824,7.986,17.824,17.833c0,9.842-7.975,17.829-17.824,17.829    c-9.851,0-17.825-7.987-17.825-17.829C217.034,194.923,225.009,186.937,234.859,186.937z" style="fill: rgb(255, 255, 255);"></path>
+                              	</g>
+                              </g>
+                              <g>
+                              </g>
+                              <g>
+                              </g>
+                              <g>
+                              </g>
+                              <g>
+                              </g>
+                              <g>
+                              </g>
+                              <g>
+                              </g>
+                              <g>
+                              </g>
+                              <g>
+                              </g>
+                              <g>
+                              </g>
+                              <g>
+                              </g>
+                              <g>
+                              </g>
+                              <g>
+                              </g>
+                              <g>
+                              </g>
+                              <g>
+                              </g>
+                              <g>
+                              </g>
+                              </svg>
+                            Team Stats</a>
+                        </li>
+                   </ul>
+                </div>
+            </div>
+        </nav>
+
+      </div>
+      <!-- END-OF-MOBILE-MENU-->
+      <!-- MAIN-MENU-->
+      <div class="uk-position-relative uk-visible@m main-menu-wrapper">
+        <div style="background:#222;" uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #sticky-dropbar-push">
+          <nav class="uk-navbar-container uk-box-shadow-small main-menu" uk-navbar="dropbar: true;">
+
+            <div class="uk-navbar-left">
+              <a href="#" class="logo-text"><strong>Basic Angular JS Assignment - Level 4</strong></a>
+            </div>
+
+            <div class="uk-navbar-right">
+
+              <ul class="uk-navbar-nav">
+                <li class="uk-margin-large-right">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    id="Capa_1" x="0px" y="0px" width="26px" height="26px" class="uk-margin-small-right" viewBox="0 0 952.1 952.1" style="enable-background:new 0 0 952.1 952.1;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <path d="M812.55,139.4c-43.7-43.7-94.6-78-151.3-102C602.55,12.6,540.25,0,475.95,0c-64.2,0.1-126.5,12.6-185.2,37.5    c-56.7,24-107.6,58.3-151.3,102c-43.7,43.7-78,94.6-102,151.3c-24.8,58.7-37.4,121-37.4,185.3c0,64.201,12.6,126.6,37.4,185.301    c24,56.699,58.3,107.6,102,151.299c43.7,43.701,94.6,78,151.3,102c58.7,24.801,121,37.4,185.3,37.4    c64.2,0,126.601-12.6,185.3-37.4c56.7-24,107.601-58.299,151.301-102c43.699-43.699,78-94.6,102-151.299    c24.8-58.701,37.399-121,37.399-185.301c0-64.2-12.6-126.6-37.399-185.3C890.55,234,856.25,183.2,812.55,139.4z M212.55,107.5    c4.3-3.3,8.5-6.8,12.9-9.9c23.1-16.2,48.7-29.3,74.7-40.2C355.55,34.2,415.75,22,475.95,22c40.1,0,81.2,5.4,119.899,16    c-15.3,6.2-34,18-65.399,44.8c-26.101-2.8-52.5-2.9-79-0.4c-34.601,3.3-69.4,11-103.4,23c-30.7,10.8-55,23.1-71.4,32.5    c-25.1-9-57.5-19.6-73.5-24.8C205.65,113.9,210.85,108.8,212.55,107.5z M646.15,226.5l-81.4,222.2l-195.3,37.5L208.05,319.5    c10.9-75.6,62.7-142.6,62.7-142.6c0.3-0.2,34.1-24.6,88.3-43.5c31.601-11.1,63.8-18.2,95.9-21.2c26.2-2.4,52.3-2,78.1,1.1    L646.15,226.5z M39.35,460.2c-5,32.3-6.1,65.8-3.5,99.5c-3.9-7.799-7-14.398-9.3-19.699c-3-20.9-4.5-42.301-4.5-64.1    c0-67,14.5-130.7,40.6-188c-2.9,30-1.5,61.1,0.6,84.7C52.05,400.7,44.05,430,39.35,460.2z M78.85,633.301    c-4.6-16.9-10-41.5-12.7-71c-3-33.301-2.1-66.4,2.9-98.101c3.8-24.3,9.9-47.899,18.3-70.6c32.9-27.8,76.5-44.1,100.6-51.6    L346.35,505.6L329.75,684.9L174.95,736.6C135.55,707.6,103.35,669.199,78.85,633.301z M549.25,892.9    c-34.5,22.6-121.7,28-157.1,29.299c-39-7.299-76.9-19.799-112.601-37c-31.2-15-60.8-33.6-87.8-55.398c0.5-0.9-4.2-48.602-4-66    l156.4-52.201l180.5,78.1l24.899,102.9C549.35,892.801,549.25,892.9,549.25,892.9z M849.15,734.6    C822.25,773.4,790.05,809.5,751.35,836.9c-36.3,25.6-84.899,34.4-128.1,41.5c-3.3,0.5-44.6,7.299-44.9,5.9l-24.899-103L680.55,649    l168.3-15.5c2.601,26.801,6,65.9,8,89.801C854.25,727.1,851.75,730.9,849.15,734.6z M851.75,600c-0.6,1-1.2,2.1-1.8,3.301    L682.35,618.699L592.15,460.9l81.6-222.7l115.2,7.3c24.5,20.5,46.2,43.3,64.6,67.9c23,30.9,40.9,64.8,53.101,100.7    C893.85,525.301,864.35,580.699,851.75,600z M911.85,349.8c-9.899-19.1-21.5-37.5-34.6-55c-20.7-27.7-45.3-53.2-73.2-75.9    c-5.1-25.3-19.1-65.1-56.7-106.9c0.7,0.5,1.4,1.1,2.101,1.6c2.3,1.7,4.5,3.5,6.8,5.2c25.9,20.4,49.5,43.5,70.4,68.9    c38.8,47.3,68.1,102.2,85.3,161.1C911.85,349.2,911.85,349.5,911.85,349.8z" fill="#FFFFFF"/>
+                      </g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    </svg>
+                  Home</a>
+                </li>
+                <li class="uk-margin-large-right">
+                  <a href="#/all-matches">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
+                    x="0px" y="0px" viewBox="0 0 490.547 490.547" style="enable-background:new 0 0 490.547 490.547;"
+                    xml:space="preserve" width="26px" height="26px" class="uk-margin-small-right">
+                    <g id="XMLID_477_">
+                      <path id="XMLID_478_" d="M251.089,141.867c13.602-13.25,13.856-35.018,0.624-48.568c-13.25-13.587-34.969-13.889-48.537-0.639   c-13.586,13.246-13.889,34.968-0.624,48.535C215.753,154.795,237.521,155.066,251.089,141.867z" fill="#FFFFFF"/>
+                      <path id="XMLID_479_" d="M210,371.783c-13.568,13.217-13.857,34.953-0.623,48.523c13.199,13.599,34.969,13.887,48.568,0.668   c13.57-13.248,13.841-35.016,0.592-48.568C245.288,358.806,223.586,358.535,210,371.783z" fill="#FFFFFF"/>
+                      <path id="XMLID_480_" d="M266.576,247.029l-49.656-14.225l-7.496-24.293c9.974-11.491,9.798-28.832-1.023-39.939l-8.808-9.029   c-3.947-4.074-10.69-7.495-13.918-8.311l-72.766-18.667c-6.633-1.726-13.696,0.384-18.332,5.448l-43.79,47.725   c-6.937,7.575-6.442,19.354,1.118,26.289c3.564,3.276,8.071,4.906,12.577,4.906c5.034,0,10.037-2.045,13.714-6.025l36.246-39.539   l24.26,6.219L86.89,228.074c-7.957,6.809-15.149,17.611-10.58,28.48l20.474,48.714L12.065,349.2   c-10.949,5.674-15.231,19.162-9.558,30.095c5.657,10.868,19.065,15.215,30.093,9.541l103.021-53.412   c2.955-1.533,5.259-3.725,7.191-6.201l11.252,12.451l-16.462,60.891c-3.212,11.876,3.834,24.149,15.727,27.361   c12.02,3.213,24.18-3.932,27.361-15.727l19.641-72.639c1.967-7.318,0.113-15.135-4.986-20.76l-47.178-52.262l31.404-30.605   l4.779,15.452c1.854,6.012,6.6,10.679,12.642,12.404l59.34,16.988c9.909,2.846,20.185-2.924,22.999-12.752   C282.159,260.148,276.453,249.857,266.576,247.029z" fill="#FFFFFF"/>
+                      <path id="XMLID_481_" d="M489.461,228.503l-21.751-61.018c-2.304-6.457-7.976-11.125-14.753-12.147l-74.301-11.171   c-3.389-0.496-10.836,0.049-16.045,2.238l-11.65,4.891c-14.272,6.023-21.24,21.927-16.492,36.406l-16.352,19.435l-51.287-6.217   c-10.436-1.23-19.481,6.026-20.711,16.221c-1.23,10.212,6.025,19.468,16.222,20.698l61.29,7.432c6.105,0.766,12.34-1.6,16.494-6.49   l10.371-12.355l18.684,44.382l-30.844,22.04c-2.975,2.142-5.387,4.97-7.017,8.232l-48.362,97.377   c-5.482,11.027-0.976,24.437,10.068,29.918c10.996,5.435,24.405,1.039,29.936-10.067l37.652-75.853l66.518,80.182   c7.832,9.414,21.88,10.805,31.436,2.928c9.493-7.881,10.804-21.946,2.926-31.438l-60.94-73.454l37.831-36.917   c8.245-8.04,6.137-19.691,1.66-29.617l-28.367-67.377l24.74,3.706l18.012,50.519c3.468,9.75,14.191,14.735,23.766,11.268   C487.862,248.818,492.912,238.174,489.461,228.503z" fill="#FFFFFF"/>
+                      <path id="XMLID_482_" d="M367.022,125.82c17.486-7.334,25.668-27.456,18.316-44.955c-7.352-17.453-27.475-25.686-44.94-18.316   c-17.485,7.35-25.716,27.488-18.364,44.988C329.418,124.988,349.553,133.22,367.022,125.82z" fill="#FFFFFF"/>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    </svg>
+                    All Matches</a>
+                </li>
+                <li class="uk-margin-large-right">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    id="Capa_1" x="0px" y="0px" width="26px" height="26px" viewBox="0 0 304.769 304.769"
+                    style="enable-background:new 0 0 304.769 304.769;" xml:space="preserve" class="uk-margin-small-right">
+                      <g>
+                        <g>
+                          <path d="M234.859,134.858c-16.398,0-31.463,5.719-43.385,15.21c-0.032-2.216-0.657-4.455-1.976-6.432l-25.567-38.233    l-15.238,22.792l-6.632,9.921l-18.598-27.806L87.814,56.998l-12.72,19.017l-3.027,4.535l-8.502-12.708L47.101,43.206V30.098    H23.552v31.4H0V85.05h23.552v23.552H0v23.549h23.552v23.552H0v23.551h23.552v23.552H0v23.552h23.552v31.398h23.549V85.575    l24.966,37.339l15.747-23.552l54.247,81.118l21.871-32.713l5.987,8.949c2.268,3.402,6.007,5.217,9.81,5.217    c-9.229,11.847-14.779,26.689-14.779,42.828c0,38.543,31.362,69.909,69.91,69.909c38.547,0,69.909-31.366,69.909-69.909    C304.769,166.214,273.406,134.858,234.859,134.858z M277.277,223.412c-2.376-1.166-5.013-1.892-7.851-1.892    c-9.842,0-17.833,7.979-17.833,17.829c0,2.829,0.722,5.466,1.896,7.843c-5.71,2.517-11.998,3.935-18.638,3.935    c-6.641,0-12.925-1.418-18.643-3.935c1.162-2.377,1.891-5.014,1.891-7.843c0-9.851-7.994-17.829-17.824-17.829    c-2.838,0-5.475,0.726-7.851,1.892c-2.513-5.719-3.924-12.006-3.924-18.643c0-6.641,1.411-12.928,3.924-18.646    c2.376,1.166,5.013,1.896,7.851,1.896c9.846,0,17.824-7.983,17.824-17.833c0-2.829-0.729-5.467-1.891-7.843    c5.718-2.517,12.002-3.936,18.643-3.936c6.64,0,12.928,1.419,18.638,3.936c-1.174,2.376-1.896,5.014-1.896,7.843    c0,9.85,7.991,17.833,17.833,17.833c2.838,0,5.475-0.729,7.851-1.896c2.513,5.702,3.939,12.006,3.939,18.646    C281.217,211.406,279.807,217.709,277.277,223.412z" style="fill: rgb(255, 255, 255);"></path>
+                          <path d="M234.859,186.937c9.85,0,17.824,7.986,17.824,17.833c0,9.842-7.975,17.829-17.824,17.829    c-9.851,0-17.825-7.987-17.825-17.829C217.034,194.923,225.009,186.937,234.859,186.937z" style="fill: rgb(255, 255, 255);"></path>
+                        </g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      </svg>
+                    Team Stats</a>
+                </li>
+              </ul>
+
+            </div>
+          </nav>
+        </div>
+
+      </div>
+      <!-- END-OF-MAIN-MENU-->
+    </header>
+    <!-- END-OF-HEADER-->
+    <!-- MAIN-->
+    <main id="main">
+      <!-- SOCCER-BANNER-->
+      <section class="soccer-banner">
+        <div class="uk-container">
+          <div class="uk-flex uk-flex-column uk-flex-middle uk-flex-center">
+            <div class="uk-padding">
+              <img src="assets/images/barclays-logo.png" alt="Barclays Premier League Logo" width="300">
+            </div>
+            <div>
+              <h1 class="welcome-text uk-text-center">Welcome to Barclays Premier League <br>
+              <small>Level 4 - Basic Angular JS assignment</small></h1>
+
+              <p class="uk-text-muted">This is an assignment project based on Basic Angular JS. In this <em>app</em> we will
+                use all the basic concepts of Angular JS controllers, modules, components, directives, services and routes
+                which we have learnt from <strong>edWisor</strong> and other recommenmded resources by mentors.
+              </p>
+              <p class="uk-text-muted">We have to design three views in this <em>app</em> we will create three views. </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- END-OF-SOCCER-BANNER-->
+      <!-- ALL-MATCHES-HELD-->
+      <section class="all-matches-held">
+        <h2 class="uk-text-center uk-heading-bullet uk-padding-small">All Matches Held in both seasons</h2>
+        <div class="uk-container">
+          <!-- TEAMS-PLAYED
+          <ul class="uk-nav team-list">
+            <li class="uk-margin-right">
+              <img src="assets/images/Team-Icons/accrington-stanley.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/arsenal.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/brighton-hove.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/burnley.jpg" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/cardiff-city.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/chelsea.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/crystal-palace.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/everton.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/fulham.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/huddersfield.jpg" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/hull-city.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/images.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/leicester-city.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/liverpool.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/man-c.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/man-u.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/middlesbrough.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/newcastle-united.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/norwich-city.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/portsmouth.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/southampton.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/stoke-city.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/sunderland.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/swansea-city.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/tottenham.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/west-bromwich-albion.png" alt="">
+            </li>
+            <li>
+              <img src="assets/images/Team-Icons/west-ham-united.png" alt="">
+            </li>
+          </ul>
+          <!-- END-OF-TEAMS-PlAYED-->
+        </div>
+        <div class="uk-container">
+          <!-- ANGULAR-VIEW-WRAPPER-->
+          <div class="angular-view-wrapper">
+            <div ng-view>
+
+            </div>
+          </div>
+          <!-- END-OF-ANGULAR-VIEW-WRAPPER-->
+        </div>
+
+      </section>
+      <!-- END-OF-ALL-MATCHES-HELD-->
+    </main>
+    <!-- END-OF-MAIN-->
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- UI-KIT-LIBRARIES -->
+    <script src="javascript/vendor/uikit.min.js"></script>
+    <script src="javascript/vendor/uikit-icons.js"></script>
+
+    <!-- Angularjs library-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+  	<!-- Angular Route-->
+  	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.min.js"></script>
+
+    <!-- ALL-MATCHES-CONTROLLER-->
+    <script src="javascript/controllers/all-matches/all-matches.js"></script>
+    <!-- APP-JAVASCRIPT-->
+    <script src="javascript/app.js"></script>
+    <!-- APP-ROUTES-JS-->
+    <script src="javascript/routes.js"></script>
+
+  </body>
+</html>
