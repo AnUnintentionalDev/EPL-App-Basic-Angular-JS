@@ -2,66 +2,78 @@
 <form class="uk-grid-small uk-padding-small" name="all-matches-filter" uk-grid>
   <!--<fieldset class="uk-fieldset">-->
     <legend class="uk-legend">Filter your Search</legend>
-    <div class="uk-width-1-2@s uk-margin-small-bottom">
-      <label class="uk-form-label" for="form-horizontal-text">Filter by year</label>
+    <div class="uk-width-1-3@s uk-margin-small-bottom">
+      <label class="uk-form-label" for="byYear">Filter by Year</label>
       <div class="uk-form-controls">
-        <label class="uk-margin-right">
-          <input class="uk-radio" type="radio" name="year2015" checked> 2015
-        </label>
-        <label>
-          <input class="uk-radio" type="radio" name="year2015"> 2016
-        </label>
+        <input class="uk-input" type="text" name="byYear" id="byYear" ng-model="filterByOthers.date" placeholder="YY-MM-DD">
       </div>
     </div>
-    <div class="uk-width-1-2@s uk-margin-small-bottom">
-      <label class="uk-form-label" for="form-horizontal-text">Filter by Team Name</label>
+    <div class="uk-width-1-3@s uk-margin-small-bottom">
+      <label class="uk-form-label" for="teamOneName">Filter by Team One Name</label>
       <div class="uk-form-controls">
-        <input class="uk-input" type="text" placeholder="Enter name of the team">
+        <input class="uk-input" type="text" name="teamOneName" id="teamOneName" ng-model="filterByOthers.team1.name" placeholder="Enter name of the team one">
       </div>
     </div>
-    <div class="uk-width-1-2@s uk-margin-small-bottom">
-      <label class="uk-form-label" for="form-horizontal-text">Filter by Score</label>
+    <div class="uk-width-1-3@s uk-margin-small-bottom">
+      <label class="uk-form-label" for="teamTwoName">Filter by Team Two Name</label>
       <div class="uk-form-controls">
-        <input class="uk-input" type="text" placeholder="Enter the number of goals">
+        <input class="uk-input" type="text" name="teamTwoName" id="teamTwoName" ng-model="filterByOthers.team2.name" placeholder="Enter name of the team two">
       </div>
     </div>
-    <div class="uk-width-1-2@s uk-margin-small-bottom">
-      <label class="uk-form-label" for="form-horizontal-text">Filter by Team Code</label>
+    <div class="uk-width-1-3@s uk-margin-small-bottom">
+      <label class="uk-form-label" for="teamOneScore">Filter by Team One Score</label>
       <div class="uk-form-controls">
-        <input class="uk-input" type="text" placeholder="Enter the code of the team">
+        <input class="uk-input" type="text" name="teamOneScore" id="teamOneScore" ng-model="filterByOthers.score1" placeholder="Enter no. of goals of team one">
+      </div>
+    </div>
+    <div class="uk-width-1-3@s uk-margin-small-bottom">
+      <label class="uk-form-label" for="teamTwoScore">Filter by Team Two Score</label>
+      <div class="uk-form-controls">
+        <input class="uk-input" type="text" name="teamTwoScore" id="teamTwoScore" ng-model="filterByOthers.score2" placeholder="Enter no. of goals of team two">
+      </div>
+    </div>
+    <div class="uk-width-1-3@s uk-margin-small-bottom">
+      <label class="uk-form-label" for="teamCode">Filter by Team Code</label>
+      <div class="uk-form-controls">
+        <input class="uk-input" type="text" name="teamCode" id="teamCode" ng-model="filterByOthers.team1.code" placeholder="Enter the code of the team">
       </div>
     </div>
   <!--</fieldset>-->
 </form>
 <!-- END-OF-FILTER-FORM-->
 <!-- FILTERED-DATA-->
-<div class="filtered-data-2015" ng-init="showAllCtrl.loadAllMatchesHeldIn2015()">
-  <h3 class="uk-heading-primary">{{showAllCtrl.dataName2015}}</h3>
-
+<div class="filtered-data-2015">
+  <h3 class="uk-heading-divider uk-margin-top">{{ShowMatchesCtrl.dataName2015}}</h3>
+  <!--<p>
+    {{ShowMatchesCtrl.dataOf2015}}
+  </p>-->
   <div class="uk-overflow-auto">
-    <table class="uk-table uk-table-striped">
+    <table class="uk-table uk-table-striped uk-table-hover">
       <thead>
         <tr>
-          <th>Rounds</th>
-          <th>Date</th>
-          <th>Team One</th>
-          <th>Team Two</th>
-          <th>Score (1<sup>st</sup>)</th>
-          <th>Score (2<sup>nd</sup></th>
-          <th>Final Score</th>
+          <th><strong>Rounds</strong></th>
+          <th><strong>Date</strong></th>
+          <th><strong>Team One</strong></th>
+          <th><strong>Team Two</strong></th>
+          <th><strong>Score (1<sup>st</sup>)</strong></th>
+          <th><strong>Score (2<sup>nd</sup></strong></th>
+          <th><strong>Final Score</strong></th>
+          <th><strong>Watch Insights</strong></th>
         </tr>
       </thead>
       <!-- ITERATING-THROUGH-ALL-CONTENT-OF-2015-->
-      <tbody ng-repeat="content in showAllCtrl.data_rounds2015">
+      <tbody ng-repeat="content in ShowMatchesCtrl.dataOf2015 | filter: filterByName">
+
         <!-- ITERATING-THROUGH-MATCHES-->
-        <tr ng-repeat="match in content.showAllCtrl">
+        <tr ng-repeat="match in content.matches | filter: filterByOthers" class="filtered-row">
           <td>{{content.name}}</td>
-          <td>{{showAllCtrl.date}}</td>
-          <td>{{showAllCtrl.team1.name}}</td>
-          <td>{{showAllCtrl.team2.name}}</td>
-          <td>{{showAllCtrl.score1}}</td>
-          <td>{{showAllCtrl.score2}}</td>
-          <td>{{showAllCtrl.score1}} - {{showAllCtrl.score2}}</td>
+          <td>{{match.date}}</td>
+          <td>{{match.team1.name}}</td>
+          <td>{{match.team2.name}}</td>
+          <td>{{match.score1}}</td>
+          <td>{{match.score2}}</td>
+          <td>{{match.score1}} - {{match.score2}}</td>
+          <td><button class="uk-button-small uk-button-secondary">View Details</button></td>
         </tr>
         <!-- END-OF-ITERATING-THROUGH-MATCHES-->
       </tbody>
@@ -73,8 +85,8 @@
 </div>
 <!-- END-OF-FILTERED-DATA-2015-->
 <!-- FILTERED-DATA-2016-->
-<div class="filtered-data-2016" ng-init="showAllCtrl.loadAllMatchesHeldIn2016()">
-  <h3 class="uk-heading-primary">{{showAllCtrl.dataName2016}}</h3>
+<div class="filtered-data-2016">
+  <h3 class="uk-heading-divider uk-margin-top">{{ShowMatchesCtrl.dataName2016}}</h3>
 
   <div class="uk-overflow-auto">
     <table class="uk-table uk-table-striped">
@@ -89,16 +101,16 @@
           <th>Final Score</th>
         </tr>
       </thead>
-      <tbody ng-repeat="content in showAllCtrl.data_rounds2016">
+      <tbody ng-repeat="content in ShowMatchesCtrl.dataOf2016">
 
-        <tr ng-repeat="match in content.showAllCtrl">
+        <tr ng-repeat="match in content.matches">
           <td>{{content.name}}</td>
-          <td>{{showAllCtrl.date}}</td>
-          <td>{{showAllCtrl.team1.name}}</td>
-          <td>{{showAllCtrl.team2.name}}</td>
-          <td>{{showAllCtrl.score1}}</td>
-          <td>{{showAllCtrl.score2}}</td>
-          <td>{{showAllCtrl.score1}} - {{showAllCtrl.score2}}</td>
+          <td>{{match.date}}</td>
+          <td>{{match.team1.name}}</td>
+          <td>{{match.team2.name}}</td>
+          <td>{{match.score1}}</td>
+          <td>{{match.score2}}</td>
+          <td>{{match.score1}} - {{match.score2}}</td>
         </tr>
       </tbody>
 

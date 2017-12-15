@@ -83,3 +83,26 @@ animation: scale-color 4  s linear 2;
 @media screen and (min-width: 767px){
 
 }
+
+/* ANIMATIONS-FOR-ANGULAR */
+
+.filtered-row.ng-enter,
+.filtered-row.ng-move,
+.filtered-row.ng-leave{
+  overflow: hidden;
+  transition: 2s linear all;
+}
+
+.filtered-row.ng-enter,
+.filtered-row.ng-move.ng-move-active,
+.filtered-row.ng-leave.ng-leave-active{
+  height: 0;
+  opacity: 0;
+}
+
+.filtered-row.ng-enter.ng-enter-active,
+.filtered-row.ng-move.ng-move-active,
+.filtered-row.ng-leave{
+  height: auto;
+  opacity: 1;
+}
