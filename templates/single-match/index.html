@@ -1,0 +1,26 @@
+<div class="uk-card uk-card-body uk-card-secondary uk-margin-top uk-card-hover">
+  <h1 class="uk-text-center">{{SingleMatchCtrl.team1}} <span class="uk-text-warning">VS</span> {{SingleMatchCtrl.team2}}</h1>
+
+  <!--<h2>{{matchData[matchId].name}}</h2>-->
+  <table class="uk-table uk-table-striped">
+    <thead>
+      <th><strong>Date</strong></th>
+      <th><strong>{{SingleMatchCtrl.team1Code}}</strong></th>
+      <th><strong>{{SingleMatchCtrl.team2Code}}</strong></th>
+      <th><strong>Final Score</strong></th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{SingleMatchCtrl.date | date: medium}}</td>
+        <td>{{SingleMatchCtrl.score1}}</td>
+        <td>{{SingleMatchCtrl.score2}}</td>
+        <td>{{SingleMatchCtrl.score1}} - {{SingleMatchCtrl.score2}}</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="uk-text-center uk-h2 uk-margin-top">Winner <i class="fa fa-trophy"></i><span class="uk-margin-small-right uk-icon" uk-icon="icon: triangle-right"></span> <span class="uk-text-success uk-text-bold"> {{SingleMatchCtrl.winner}}</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a class="uk-button uk-button-danger" href="#/all-matches"><span class="uk-margin-small-right uk-icon" uk-icon="icon: chevron-left"></span> Go Back to All Matches</a>
+</div>

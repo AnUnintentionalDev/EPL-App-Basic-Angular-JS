@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6{ font-family: 'Lakki Reddy', cursive; color: #148abb;}
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+-  100% { transform: rotate(360deg); }
 }
 
 /***
@@ -55,9 +55,9 @@ animation: scale-color 4  s linear 2;
 }
 
 @-webkit-keyframes scale-color {
-0% { -webkit-transform: scale(0.1); color: #222; }
-50% { -webkit-transform: scale(1); color: #666; }
-100% { -webkit-transform: scale(0); color: #fff; }
+0% { transform: scale(0.1); -webkit-transform: scale(0.1); color: #222; }
+50% {transform: scale(1);  -webkit-transform: scale(1); color: #666; }
+100% { transform: scale(0); -webkit-transform: scale(0); color: #fff; }
 }
 
 @keyframes scale-color {
@@ -72,37 +72,22 @@ animation: scale-color 4  s linear 2;
 .team-list li img:hover{ transform: translateY(5px); cursor: pointer; box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.1); padding: 0.5em;}
 
 /* FOOTER */
-#footer{ background: #121212; padding: 1em 0; color: #fff!important;}
-#footer p{ margin-bottom: 0;}
+#footer{ background: #ccc; padding: 1em 0; margin-top: 1em;}
+#footer p, #footer a{ margin-bottom: 0; color: #171717;}
+#footer a:hover{ color: #999;}
 
 /* MEDIA-QUERIES*/
 @media screen and (max-width: 767px){
   .uk-heading-primary{ font-size: 1.625rem;}
 }
 
-@media screen and (min-width: 767px){
+.team-stats-section .uk-table caption{ font-size: 2em; color: #fff!important; text-shadow: 0 2px 3px rgba(0,0,0,0.5);}
 
-}
+#watch-below{ position: relative; color: #fff; -webkit-animation: watch-below 2s linear infinite; animation: watch-below 2s linear infinite;}
 
-/* ANIMATIONS-FOR-ANGULAR */
-
-.filtered-row.ng-enter,
-.filtered-row.ng-move,
-.filtered-row.ng-leave{
-  overflow: hidden;
-  transition: 2s linear all;
-}
-
-.filtered-row.ng-enter,
-.filtered-row.ng-move.ng-move-active,
-.filtered-row.ng-leave.ng-leave-active{
-  height: 0;
-  opacity: 0;
-}
-
-.filtered-row.ng-enter.ng-enter-active,
-.filtered-row.ng-move.ng-move-active,
-.filtered-row.ng-leave{
-  height: auto;
-  opacity: 1;
+@keyframes watch-below{
+  0% { transform: translateY(0); -webkit-transform: translateY(0); -moz-transform: translateY(0);}
+  50%{ transform: translateY(15px); -webkit-transform: translateY(15px); -moz-transform: translateY(15px);}
+  75%{ transform: translateY(0); -webkit-transform: translateY(0); -moz-transform: translateY(0);}
+  100%{ transform: translateY(-15px); -webkit-transform: translateY(-15px); -moz-transform: translateY(-15px);}
 }

@@ -1,0 +1,12 @@
+<!-- SHOWING-ALL-TEAMS-->
+<section class="uk-section-small">
+  <h2 class="uk-text-center uk-heading-divider">Choose the team which you want see Statistics of</h2>
+  <div class="uk-child-width-1-4@s uk-margin-top uk-text-center" uk-grid>
+    <div ng-repeat="team in teamNameCtrl.teamName" ng-init="id1 = $index">
+        <div class="uk-tile uk-tile-primary uk-padding-small">
+          <h3><a href="#/team-stats/{{team}}/{{id1}}" class="uk-link-text">{{team}}</a></h3>
+        </div>
+    </div>
+  </div>
+</section>
+<!-- END-OF-SHOWING-ALL-TEAMS-->

@@ -2,6 +2,12 @@
 <form class="uk-grid-small uk-padding-small" name="all-matches-filter" uk-grid>
   <!--<fieldset class="uk-fieldset">-->
     <legend class="uk-legend">Filter your Search</legend>
+    <div class="uk-width-1-1@s uk-margin-small-bottom">
+      <label class="uk-form-label" for="byYear">Filter by Round Name</label>
+      <div class="uk-form-controls">
+        <input class="uk-input" type="text" name="filterByYear" id="filterByYear" ng-model="filterByName.name" placeholder="Enter Round Name">
+      </div>
+    </div>
     <div class="uk-width-1-3@s uk-margin-small-bottom">
       <label class="uk-form-label" for="byYear">Filter by Year</label>
       <div class="uk-form-controls">
@@ -48,7 +54,7 @@
     {{ShowMatchesCtrl.dataOf2015}}
   </p>-->
   <div class="uk-overflow-auto">
-    <table class="uk-table uk-table-striped uk-table-hover">
+    <table class="uk-table uk-table-middle uk-table-striped">
       <thead>
         <tr>
           <th><strong>Rounds</strong></th>
@@ -58,12 +64,11 @@
           <th><strong>Score (1<sup>st</sup>)</strong></th>
           <th><strong>Score (2<sup>nd</sup></strong></th>
           <th><strong>Final Score</strong></th>
-          <th><strong>Watch Insights</strong></th>
+          <th class="uk-table-expand"><strong>Watch Insights</strong></th>
         </tr>
       </thead>
       <!-- ITERATING-THROUGH-ALL-CONTENT-OF-2015-->
-      <tbody ng-repeat="content in ShowMatchesCtrl.dataOf2015 | filter: filterByName">
-
+      <tbody ng-repeat="content in ShowMatchesCtrl.dataOf2015 | filter: filterByName" ng-init="id1 = $index">
         <!-- ITERATING-THROUGH-MATCHES-->
         <tr ng-repeat="match in content.matches | filter: filterByOthers" class="filtered-row">
           <td>{{content.name}}</td>
@@ -73,7 +78,7 @@
           <td>{{match.score1}}</td>
           <td>{{match.score2}}</td>
           <td>{{match.score1}} - {{match.score2}}</td>
-          <td><button class="uk-button-small uk-button-secondary">View Details</button></td>
+          <td><a class="uk-button uk-button-secondary" href="#/single-match/{{id1}}/{{content.matches.indexOf(match)}}/{{match.date}}">View Details</a></td>
         </tr>
         <!-- END-OF-ITERATING-THROUGH-MATCHES-->
       </tbody>
@@ -89,21 +94,22 @@
   <h3 class="uk-heading-divider uk-margin-top">{{ShowMatchesCtrl.dataName2016}}</h3>
 
   <div class="uk-overflow-auto">
-    <table class="uk-table uk-table-striped">
+    <table class="uk-table uk-table-striped uk-table-middle">
       <thead>
         <tr>
-          <th>Rounds</th>
-          <th>Date</th>
-          <th>Team One</th>
-          <th>Team Two</th>
-          <th>Score (1<sup>st</sup>)</th>
-          <th>Score (2<sup>nd</sup></th>
-          <th>Final Score</th>
+          <th><strong>Rounds</strong></th>
+          <th><strong>Date</strong></th>
+          <th><strong>Team One</strong></th>
+          <th><strong>Team Two</strong></th>
+          <th><strong>Score (1<sup>st</sup>)</strong></th>
+          <th><strong>Score (2<sup>nd</sup></strong></th>
+          <th><strong>Final Score</strong></th>
+          <th class="uk-table-expand"><strong>Watch Insights</strong></th>
         </tr>
       </thead>
-      <tbody ng-repeat="content in ShowMatchesCtrl.dataOf2016">
+      <tbody ng-repeat="content in ShowMatchesCtrl.dataOf2016 | filter: filterByName" ng-init="id1 = $index">
 
-        <tr ng-repeat="match in content.matches">
+        <tr ng-repeat="match in content.matches | filter: filterByOthers">
           <td>{{content.name}}</td>
           <td>{{match.date}}</td>
           <td>{{match.team1.name}}</td>
@@ -111,6 +117,7 @@
           <td>{{match.score1}}</td>
           <td>{{match.score2}}</td>
           <td>{{match.score1}} - {{match.score2}}</td>
+          <td><a class="uk-button uk-button-secondary" href="#/single-match/{{id1}}/{{content.matches.indexOf(match)}}/{{match.date}}">View Details</a></td>
         </tr>
       </tbody>
 

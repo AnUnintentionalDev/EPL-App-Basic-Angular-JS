@@ -1,0 +1,104 @@
+<!-- TEAM-STATS-SECTION-->
+<div class="uk-card uk-card-body uk-card-secondary uk-card-hover uk-margin-top">
+  <h2 class="uk-text-center uk-heading-divider">{{teamStatsCtrl.heading}}</h2>
+  <div class="uk-child-width-1-2@m" uk-grid>
+    <div>
+      <!--TEAM-STATS-2015 -->
+      <section class="team-stats-2015 team-stats-section" ng-hide="teamStatsCtrl.totalMatchesPlayedOf2015 === 0">
+        <div class="uk-overflow-auto">
+          <table class="uk-table uk-table-striped">
+            <caption class="uk-padding-small">Stats of 2015/2016</caption>
+            <tbody>
+              <tr>
+                <td><strong>Team</strong></td>
+                <td>{{teamStatsCtrl.teamName}}</td>
+              </tr>
+              <tr>
+                <td><strong>Matches Played</strong></td>
+                <td>{{teamStatsCtrl.totalMatchesPlayedOf2015}}</td>
+              </tr>
+              <tr>
+                <td><strong>Total Win</strong></td>
+                <td>{{teamStatsCtrl.totalWinsOf2015}}</td>
+              </tr>
+              <tr>
+                <td><strong>Total Loss</strong></td>
+                <td>{{teamStatsCtrl.totalLossOf2015}}</td>
+              </tr>
+              <tr>
+                <td><strong>Tie Games</strong></td>
+                <td>{{teamStatsCtrl.totalTieOf2015}}</td>
+              </tr>
+              <tr>
+                <td><strong>Goals Scored</strong></td>
+                <td>{{teamStatsCtrl.totalGoalsScoredOf2015}}</td>
+              </tr>
+              <tr>
+                <td><strong>Win %</strong></td>
+                <td>{{teamStatsCtrl.winPercentOf2015}}</td>
+              </tr>
+              <tr>
+                <td><strong>Loss %</strong></td>
+                <td>{{teamStatsCtrl.lossPercentOf2015}}</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+        </div>
+      </section>
+      <!-- END-OF-TEAM-STATS-2015-->
+      <h1 class="uk-heading-primary">{{teamStatsCtrl.message}}</h2>
+    </div>
+    <div>
+    <hr class="uk-divider-icon uk-hidden@m">
+    <!--TEAM-STATS-2016 -->
+      <section class="team-stats-2016 team-stats-section" ng-hide="teamStatsCtrl.totalMatchesPlayedOf2016 === 0">
+        <div class="uk-overflow-auto">
+
+
+          <table class="uk-table uk-table-striped">
+            <caption class="uk-padding-small">Stats of 2016/2017</caption>
+            <tbody>
+              <tr>
+                <td><strong>Team</strong></td>
+                <td>{{teamStatsCtrl.teamName}}</td>
+              </tr>
+              <tr>
+                <td><strong>Matches Played</strong></td>
+                <td>{{teamStatsCtrl.totalMatchesPlayedOf2016}}</td>
+              </tr>
+              <tr>
+                <td><strong>Total Win</strong></td>
+                <td>{{teamStatsCtrl.totalWinsOf2016}}</td>
+              </tr>
+              <tr>
+                <td><strong>Total Loss</strong></td>
+                <td>{{teamStatsCtrl.totalLossOf2016}}</td>
+              </tr>
+              <tr>
+                <td><strong>Tie Games</strong></td>
+                <td>{{teamStatsCtrl.totalTieOf2016}}</td>
+              </tr>
+              <tr>
+                <td><strong>Goals Scored</strong></td>
+                <td>{{teamStatsCtrl.totalGoalsScoredOf2016}}</td>
+              </tr>
+              <tr>
+                <td><strong>Win %</strong></td>
+                <td>{{teamStatsCtrl.winPercentOf2016}}</td>
+              </tr>
+              <tr>
+                <td><strong>Loss %</strong></td>
+                <td>{{teamStatsCtrl.lossPercentOf2016}}</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+        </div>
+      </section>
+      <!-- END-OF-TEAM-STATS-2016-->
+    </div>
+</div>
+<!-- END-OF-TEAM-STATS-SECTION-->
